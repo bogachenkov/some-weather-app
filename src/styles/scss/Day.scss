@@ -1,0 +1,111 @@
+.Day {
+  padding: 28px 11px;
+  transition: all .5s;
+  flex: 0 0 100%;
+  max-width: 100%;
+
+  @include minq('tablet') {
+    
+    &:nth-child(2n + 1) {
+      border-right: 1px solid #d8dcdf;
+    }
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  @include minq('laptop') {
+    border-right: 1px solid #d8dcdf;
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+
+  &:last-child {
+    border: none;
+  }
+
+  &:hover {
+    @include minq('laptop') {
+      background-color: $blue;
+      color: #ffffff;
+
+      .Day__weekday {
+        color: #ffffff;
+      }
+
+      .Day__date {
+        border-color: #2b8099;
+        background-color: #2b8099;
+      }
+
+      .Day__icon {
+        svg {
+          fill: #ffffff;
+        }
+      }
+
+      .Day__max {
+        span {
+          border-color: #2b8099;
+        }
+      }
+    }
+  }
+
+  &__weekday {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: $dark-font;
+    margin: 0;
+    margin-bottom: 1.2em;
+    text-align: center;
+  }
+
+  &__date {
+    text-align: center;
+    width: 10rem;
+    margin: 0 auto 2em;
+    padding: 1.1rem 0;
+    font-size: 1.4rem;
+    border: 1px solid #8894a1;
+    border-radius: 1.7rem;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &__icon {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    svg {
+      fill: $blue;
+      height: 6rem;
+    }
+  }
+
+  &__state {
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2.4em;
+  }
+
+  &__max {
+    font-size: 3.2rem;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+
+    span {
+      display: inline-block;
+      padding: 0 .5em .5em;
+      border-bottom: 1px solid #d8dcdf;
+    }
+  }
+
+  &__min {
+    text-align: center;
+    font-size: 1.9rem;
+    margin: .75em auto;
+  }
+}

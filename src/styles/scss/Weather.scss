@@ -1,0 +1,70 @@
+.Weather {
+
+  display: block;
+  justify-content: space-between;
+
+  @include minq('laptop') {
+    display: block;
+  }
+
+  &__now {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+
+    svg {
+      margin-right: 12px;
+      vertical-align: top;
+      height: 56px;
+      fill: $blue;
+    }
+  }
+
+  &__degrees {
+    font-size: 5.6rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+
+    span {
+      font-size: 1.8rem;
+      line-height: 1.9;
+      vertical-align: top;
+      margin-left: -.8em;
+    }
+  }
+
+  &__state {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  &__data {
+    margin: 3.5rem 0 2.5rem;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+
+    strong {
+      margin-left: 2em;
+    }
+
+    &-type {
+      display: flex;
+      align-items: center;
+    }
+
+    svg {
+      height: 2.8rem;
+      fill: $light;
+      margin-right: .5em;
+      vertical-align: middle;
+    }
+  }
+}

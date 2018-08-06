@@ -1,0 +1,30 @@
+.Error {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  article {
+    box-shadow: 0 1rem 2rem rgba(0, 173, 228, 0.15);
+    background-color: #ffffff;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    padding: 50px 35px;
+    color: $main;
+    font-size: 1.6rem;
+    text-align: center;
+
+    header {
+      border-bottom: 1px solid $light;
+      font-size: 2rem;
+      font-weight: 600;
+      padding: 1em;
+      text-align: center;
+    }
+  }
+}

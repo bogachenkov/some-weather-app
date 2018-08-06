@@ -1,0 +1,36 @@
+@import './variables.scss';
+
+@import './Card';
+@import './Container';
+@import './Date';
+@import './Day';
+@import './Error';
+@import './Header';
+@import './Icon';
+@import './Spinner';
+@import './Time';
+@import './Weather';
+@import './Week';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: $bg;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.application {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include minq('tablet') {
+    padding: 0 52px;
+  }
+}

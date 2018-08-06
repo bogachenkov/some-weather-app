@@ -1,0 +1,50 @@
+.Card {
+  box-shadow: 0 1rem 2rem rgba(0, 173, 228, 0.15);
+  border-radius: 1rem;
+  background-color: #ffffff;
+  padding: 25px;
+  color: $main;
+  min-height: 350px;
+  overflow-x: hidden;
+
+  &__header {
+    
+    h1 {
+      color: $blue;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0;
+      margin-bottom: 1.333em;
+    }
+  }
+  
+  &-col {
+    padding: 10px;
+
+    &.is-1, &.is-2, &.is-3 {
+      flex: 1 100%;
+      max-width: 100%;
+    }
+
+    &.is-1 {
+      @include minq('laptop') {
+        flex: 1 33.33333%;
+        max-width: 33.33333%;
+      }
+    }
+  
+    &.is-2 {
+      @include minq('laptop') {
+        flex: 1 66.66666%;
+      max-width: 66.66666%;
+      }
+    }
+  
+    &.is-3 {
+      flex: 1 100%;
+      max-width: 100%;
+    }
+
+    
+  }
+}

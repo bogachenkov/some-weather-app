@@ -1,0 +1,17 @@
+.Date {
+  margin-left: 1.2rem;
+  
+  &__weekday {
+    font-weight: 600;
+    font-size: 2.4rem;
+    margin: 0;
+    line-height: 1;
+  }
+
+  &__month {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1;
+  }
+}

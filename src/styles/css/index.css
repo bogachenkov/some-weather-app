@@ -1,0 +1,530 @@
+.Card {
+  box-shadow: 0 1rem 2rem rgba(0, 173, 228, 0.15);
+  border-radius: 1rem;
+  background-color: #ffffff;
+  padding: 25px;
+  color: #9da8bc;
+  min-height: 350px;
+  overflow-x: hidden; }
+  .Card__header h1 {
+    color: #53c6ea;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 1.333em; }
+  .Card-col {
+    padding: 10px; }
+    .Card-col.is-1, .Card-col.is-2, .Card-col.is-3 {
+      flex: 1 100%;
+      max-width: 100%; }
+    @media screen and (min-width: 64em) {
+      .Card-col.is-1 {
+        flex: 1 33.33333%;
+        max-width: 33.33333%; } }
+    @media screen and (min-width: 64em) {
+      .Card-col.is-2 {
+        flex: 1 66.66666%;
+        max-width: 66.66666%; } }
+    .Card-col.is-3 {
+      flex: 1 100%;
+      max-width: 100%; }
+
+.Container {
+  display: flex;
+  flex-flow: row wrap; }
+
+.Date {
+  margin-left: 1.2rem; }
+  .Date__weekday {
+    font-weight: 600;
+    font-size: 2.4rem;
+    margin: 0;
+    line-height: 1; }
+  .Date__month {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1; }
+
+.Day {
+  padding: 28px 11px;
+  transition: all .5s;
+  flex: 0 0 100%;
+  max-width: 100%; }
+  @media screen and (min-width: 48em) {
+    .Day {
+      flex: 0 0 50%;
+      max-width: 50%; }
+      .Day:nth-child(2n + 1) {
+        border-right: 1px solid #d8dcdf; } }
+  @media screen and (min-width: 64em) {
+    .Day {
+      border-right: 1px solid #d8dcdf;
+      flex: 0 0 20%;
+      max-width: 20%; } }
+  .Day:last-child {
+    border: none; }
+  @media screen and (min-width: 64em) {
+    .Day:hover {
+      background-color: #53c6ea;
+      color: #ffffff; }
+      .Day:hover .Day__weekday {
+        color: #ffffff; }
+      .Day:hover .Day__date {
+        border-color: #2b8099;
+        background-color: #2b8099; }
+      .Day:hover .Day__icon svg {
+        fill: #ffffff; }
+      .Day:hover .Day__max span {
+        border-color: #2b8099; } }
+  .Day__weekday {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #8d919d;
+    margin: 0;
+    margin-bottom: 1.2em;
+    text-align: center; }
+  .Day__date {
+    text-align: center;
+    width: 10rem;
+    margin: 0 auto 2em;
+    padding: 1.1rem 0;
+    font-size: 1.4rem;
+    border: 1px solid #8894a1;
+    border-radius: 1.7rem;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 600; }
+  .Day__icon {
+    text-align: center;
+    margin-bottom: 2rem; }
+    .Day__icon svg {
+      fill: #53c6ea;
+      height: 6rem; }
+  .Day__state {
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 2.4em; }
+  .Day__max {
+    font-size: 3.2rem;
+    font-style: italic;
+    text-align: center;
+    margin: 0; }
+    .Day__max span {
+      display: inline-block;
+      padding: 0 .5em .5em;
+      border-bottom: 1px solid #d8dcdf; }
+  .Day__min {
+    text-align: center;
+    font-size: 1.9rem;
+    margin: .75em auto; }
+
+.Error {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .Error article {
+    box-shadow: 0 1rem 2rem rgba(0, 173, 228, 0.15);
+    background-color: #ffffff;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    padding: 50px 35px;
+    color: #9da8bc;
+    font-size: 1.6rem;
+    text-align: center; }
+    .Error article header {
+      border-bottom: 1px solid #a9e3f5;
+      font-size: 2rem;
+      font-weight: 600;
+      padding: 1em;
+      text-align: center; }
+
+.Header {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #b6bfce;
+  margin-bottom: 10px; }
+  .Header__datetime {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; }
+  .Header__weather {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: auto; }
+
+.icon {
+  position: relative;
+  display: inline-block;
+  width: 12em;
+  height: 10em;
+  font-size: 1em;
+  /* control icon size here */ }
+
+.cloud {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 3.6875em;
+  height: 3.6875em;
+  margin: -1.84375em;
+  background: #fafbfc;
+  border-radius: 50%;
+  box-shadow: -2.1875em 0.6875em 0 -0.6875em #fafbfc, 2.0625em 0.9375em 0 -0.9375em #fafbfc, 0 0 0 0.375em #53c6ea, -2.1875em 0.6875em 0 -0.3125em #53c6ea, 2.0625em 0.9375em 0 -0.5625em #53c6ea; }
+
+.cloud:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -0.5em;
+  display: block;
+  width: 4.5625em;
+  height: 1em;
+  background: #fafbfc;
+  box-shadow: 0 0.4375em 0 -0.0625em #53c6ea; }
+
+.cloud:nth-child(2) {
+  z-index: 0;
+  background: #53c6ea;
+  box-shadow: -2.1875em 0.6875em 0 -0.6875em #53c6ea, 2.0625em 0.9375em 0 -0.9375em #53c6ea, 0 0 0 0.375em #53c6ea, -2.1875em 0.6875em 0 -0.3125em #53c6ea, 2.0625em 0.9375em 0 -0.5625em #53c6ea;
+  opacity: 0.3;
+  transform: scale(0.5) translate(6em, -3em);
+  animation: cloud 4s linear infinite; }
+
+.cloud:nth-child(2):after {
+  background: #53c6ea; }
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  margin: -1.25em;
+  background: #fafbfc;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.375em #53c6ea;
+  animation: spin 12s infinite linear; }
+
+.rays {
+  position: absolute;
+  top: -2em;
+  left: 50%;
+  display: block;
+  width: 0.375em;
+  height: 1.125em;
+  margin-left: -0.1875em;
+  background: #53c6ea;
+  border-radius: 0.25em;
+  box-shadow: 0 5.375em #53c6ea; }
+
+.rays:before,
+.rays:after {
+  content: '';
+  position: absolute;
+  top: 0em;
+  left: 0em;
+  display: block;
+  width: 0.375em;
+  height: 1.125em;
+  transform: rotate(60deg);
+  transform-origin: 50% 3.25em;
+  background: #53c6ea;
+  border-radius: 0.25em;
+  box-shadow: 0 5.375em #53c6ea; }
+
+.rays:before {
+  transform: rotate(120deg); }
+
+.cloud + .sun {
+  margin: -2em 1em; }
+
+.rain,
+.lightning,
+.snow {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 3.75em;
+  height: 3.75em;
+  margin: 0.375em 0 0 -2em;
+  background: #fafbfc; }
+
+.rain:after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 1.125em;
+  height: 1.125em;
+  margin: -1em 0 0 -0.25em;
+  background: #0cf;
+  border-radius: 100% 0 60% 50% / 60% 0 100% 50%;
+  box-shadow: 0.625em 0.875em 0 -0.125em rgba(255, 255, 255, 0.2), -0.875em 1.125em 0 -0.125em rgba(255, 255, 255, 0.2), -1.375em -0.125em 0 rgba(255, 255, 255, 0.2);
+  transform: rotate(-28deg);
+  animation: rain 3s linear infinite; }
+
+.bolt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -0.25em 0 0 -0.125em;
+  color: #53c6ea;
+  opacity: 0.3;
+  animation: lightning 2s linear infinite; }
+
+.bolt:nth-child(2) {
+  width: 0.5em;
+  height: 0.25em;
+  margin: -1.75em 0 0 -1.875em;
+  transform: translate(2.5em, 2.25em);
+  opacity: 0.2;
+  animation: lightning 1.5s linear infinite; }
+
+.bolt:before,
+.bolt:after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  margin: -1.625em 0 0 -1.0125em;
+  border-top: 1.25em solid #fafbfc;
+  border-right: 0.75em solid;
+  border-bottom: 0.75em solid;
+  border-left: 0.5em solid #fafbfc;
+  transform: skewX(-10deg); }
+
+.bolt:after {
+  margin: -0.25em 0 0 -0.25em;
+  border-top: 0.75em solid;
+  border-right: 0.5em solid #fafbfc;
+  border-bottom: 1.25em solid #fafbfc;
+  border-left: 0.75em solid;
+  transform: skewX(-10deg); }
+
+.bolt:nth-child(2):before {
+  margin: -0.75em 0 0 -0.5em;
+  border-top: 0.625em solid #fafbfc;
+  border-right: 0.375em solid;
+  border-bottom: 0.375em solid;
+  border-left: 0.25em solid #fafbfc; }
+
+.bolt:nth-child(2):after {
+  margin: -0.125em 0 0 -0.125em;
+  border-top: 0.375em solid;
+  border-right: 0.25em solid #fafbfc;
+  border-bottom: 0.625em solid #fafbfc;
+  border-left: 0.375em solid; }
+
+.flake:before,
+.flake:after {
+  content: '\2744';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -1.025em 0 0 -1.0125em;
+  color: #53c6ea;
+  list-height: 1em;
+  opacity: 0.2;
+  animation: spin 8s linear infinite reverse; }
+
+.flake:after {
+  margin: 0.125em 0 0 -1em;
+  font-size: 1.5em;
+  opacity: 0.4;
+  animation: spin 14s linear infinite; }
+
+.flake:nth-child(2):before {
+  margin: -0.5em 0 0 0.25em;
+  font-size: 1.25em;
+  opacity: 0.2;
+  animation: spin 10s linear infinite; }
+
+.flake:nth-child(2):after {
+  margin: 0.375em 0 0 0.125em;
+  font-size: 2em;
+  opacity: 0.4;
+  animation: spin 16s linear infinite reverse; }
+
+/* Animations */
+@keyframes spin {
+  100% {
+    transform: rotate(360deg); } }
+@keyframes cloud {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0.3; }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translate(-200%, -3em); } }
+@keyframes rain {
+  0% {
+    background: #0cf;
+    box-shadow: 0.625em 0.875em 0 -0.125em rgba(255, 255, 255, 0.2), -0.875em 1.125em 0 -0.125em rgba(255, 255, 255, 0.2), -1.375em -0.125em 0 #0cf; }
+  25% {
+    box-shadow: 0.625em 0.875em 0 -0.125em rgba(255, 255, 255, 0.2), -0.875em 1.125em 0 -0.125em #0cf, -1.375em -0.125em 0 rgba(255, 255, 255, 0.2); }
+  50% {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0.625em 0.875em 0 -0.125em #0cf, -0.875em 1.125em 0 -0.125em rgba(255, 255, 255, 0.2), -1.375em -0.125em 0 rgba(255, 255, 255, 0.2); }
+  100% {
+    box-shadow: 0.625em 0.875em 0 -0.125em rgba(255, 255, 255, 0.2), -0.875em 1.125em 0 -0.125em rgba(255, 255, 255, 0.2), -1.375em -0.125em 0 #0cf; } }
+@keyframes lightning {
+  45% {
+    color: #53c6ea;
+    background: #53c6ea;
+    opacity: 0.2; }
+  50% {
+    color: #0cf;
+    background: #0cf;
+    opacity: 1; }
+  55% {
+    color: #53c6ea;
+    background: #53c6ea;
+    opacity: 0.2; } }
+.Spinner {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.Time {
+  font-size: 4.8rem;
+  line-height: 1;
+  font-weight: 600;
+  margin: 0; }
+  .Time span {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.9;
+    vertical-align: top; }
+
+.Weather {
+  display: block;
+  justify-content: space-between; }
+  @media screen and (min-width: 64em) {
+    .Weather {
+      display: block; } }
+  .Weather__now {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem; }
+    .Weather__now svg {
+      margin-right: 12px;
+      vertical-align: top;
+      height: 56px;
+      fill: #53c6ea; }
+  .Weather__degrees {
+    font-size: 5.6rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1; }
+    .Weather__degrees span {
+      font-size: 1.8rem;
+      line-height: 1.9;
+      vertical-align: top;
+      margin-left: -.8em; }
+  .Weather__state {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic; }
+  .Weather__data {
+    margin: 3.5rem 0 2.5rem; }
+  .Weather__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem; }
+    .Weather__item strong {
+      margin-left: 2em; }
+    .Weather__item-type {
+      display: flex;
+      align-items: center; }
+    .Weather__item svg {
+      height: 2.8rem;
+      fill: #a9e3f5;
+      margin-right: .5em;
+      vertical-align: middle; }
+
+.Week {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  transform: translate(0px, 0px);
+  transition: transform .75s; }
+  .Week__wrap {
+    position: relative;
+    z-index: 500; }
+  .Week.end {
+    transform: translate(-100%, 0px); }
+  .Week__controls {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 550; }
+    @media screen and (min-width: 64em) {
+      .Week__controls {
+        top: -5.5rem;
+        right: 0;
+        left: unset; } }
+    .Week__controls button {
+      background: transparent;
+      border: none;
+      outline: none; }
+      .Week__controls button svg {
+        height: 3.6rem;
+        fill: #53c6ea;
+        cursor: pointer;
+        transition: all .5s; }
+        .Week__controls button svg:hover {
+          fill: #2b8099; }
+      .Week__controls button:disabled svg {
+        fill: #a9e3f5; }
+
+#WeekChartCanvas {
+  height: 325px !important;
+  width: 100% !important; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 10px; }
+
+body {
+  background-color: #fafbfc;
+  font-family: 'Open Sans', sans-serif; }
+
+.application {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px; }
+  @media screen and (min-width: 48em) {
+    .application {
+      padding: 0 52px; } }
+
+/*# sourceMappingURL=index.css.map */

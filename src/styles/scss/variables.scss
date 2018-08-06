@@ -1,0 +1,21 @@
+$bg:#fafbfc;
+$main: #9da8bc;
+$dark-font: #8d919d;
+$blue: #53c6ea;
+$light: #a9e3f5;
+$header: #b6bfce;
+
+$breakpoints: (
+        "phone":        25em,
+        "tablet":       48em,
+        "laptop":       64em,
+        "desktop":      90em,
+        "4k":           160em
+);
+
+@mixin minq($width) {
+  $width: map_get($breakpoints, $width);
+  @media screen and (min-width: $width){
+    @content;
+  }
+}

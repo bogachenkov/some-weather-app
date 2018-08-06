@@ -1,0 +1,61 @@
+.Week {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  transform: translate(0px, 0px);
+  transition: transform .75s;
+
+  &__wrap {
+    position: relative;
+    z-index: 500;
+  }
+
+  &.end {
+    transform: translate(-100%, 0px);
+  }
+
+  &__controls {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 550;
+
+    @include minq('laptop') {
+      top: -5.5rem;
+      right: 0;
+      left: unset;
+    }
+
+    button {
+      background: transparent;
+      border: none;
+      outline: none;
+
+      svg {
+        height: 3.6rem;
+        fill: $blue;
+        cursor: pointer;
+        transition: all .5s;
+  
+        &:hover {
+          fill: #2b8099;
+        }
+      }
+
+      &:disabled {
+        svg {
+          fill: $light;
+        }
+      }
+    }   
+  }
+}
+
+#WeekChartCanvas {
+  height: 325px !important;
+  width: 100% !important;
+}
